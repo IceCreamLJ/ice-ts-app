@@ -1,0 +1,76 @@
+{
+  "name": "ice-ts-app",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.101",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "react-scripts": "5.0.1",
+    "rimraf": "^6.0.1",
+    "sass": "^1.77.6",
+    "storybook": "^8.2.2",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "sass ./src/index.scss ./dist/index.css --no-source-map",
+    "clean": "rimraf ./dist",
+    "build": "npm run clean && npm run build-css && npm run build-ts",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "plugin:storybook/recommended"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.6.1",
+    "@storybook/addon-essentials": "^8.2.2",
+    "@storybook/addon-interactions": "^8.2.2",
+    "@storybook/addon-links": "^8.2.2",
+    "@storybook/addon-onboarding": "^8.2.2",
+    "@storybook/blocks": "^8.2.2",
+    "@storybook/preset-create-react-app": "^8.2.2",
+    "@storybook/react": "^8.2.2",
+    "@storybook/react-webpack5": "^8.2.2",
+    "@storybook/test": "^8.2.2",
+    "classnames": "^2.5.1",
+    "eslint-plugin-storybook": "^0.8.0",
+    "prop-types": "^15.8.1",
+    "webpack": "^5.93.0"
+  }
+}

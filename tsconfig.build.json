@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    // 输出文件夹
+    "outDir": "dist",
+
+    // 是 esmodule 的形式，还可以选 amd、cmd
+    "module": "esnext",
+
+    // 输出的ES版本，ES3-ESNext
+    "target": "ES5",
+
+    // typescript 使用库的时候，可以获取类型提示，在 .d.ts 文件，所以这个文件也要导出
+    "declaration": true,
+
+    // jsx 是 React.createElement 的语法糖，可选 preserve | react | react-native，编译出来的文件使用 React.createElement 代替 jsx 语法
+    "jsx": "react",
+
+    // 加载资源的方案，有classic 和 node 两种，classic 对应的是相对路径的方案，从当前路径一直往上找到 root。但是 node 是去 node_modules 中查找
+    "moduleResolution": "node",
+
+    // 支持默认导出的方式，不定义时只支持 import * as React from 'react'
+    "allowSyntheticDefaultImports": true
+  },
+
+  // 编译src下的文件
+  "include": ["src"],
+
+  // 排除 src 无需编译的文件
+  "exclude": ["src/**/*.test.tsx", "src/**/*.stories.tsx", "src/setupTests.ts"]
+}
